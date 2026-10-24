@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+
+:root {
+    --primary-green: #006633;
+    --accent-green: #00b050;
+    --neon-glow: rgba(0, 176, 80, 0.25);
+    --bg-dark: #0b1310;
+    --bg-light: #f4fbf7;
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --text-main: #111827;
+    --text-muted: #4b5563;
+    --border-color: rgba(0, 102, 51, 0.15);
+    --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Global Reset & Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: radial-gradient(circle at top right, #e6f4ed, #f8fafc);
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Modern Glassmorphism Header */
+header {
+    background: linear-gradient(135deg, #004d26, #006633);
+    color: #ffffff;
+    padding: 3rem 1rem 3.5rem;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-green);
+    box-shadow: 0 10px 30px rgba(0, 102, 51, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 140%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 176, 80, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.nav-bar {
+    max-width: 1050px;
+    margin: 0 auto 1.8rem;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+.back-link {
+    color: #d1fae5;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-smooth);
+}
+
+.back-link:hover {
+    color: #ffffff;
+    transform: translateX(-3px);
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 2;
+}
+
+header p {
+    margin: 0;
+    color: #d1fae5;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main Container */
+main {
+    max-width: 1050px;
+    margin: 3rem auto;
+    padding: 0 1.2rem;
+}
+
+/* Glassmorphism Sections & Cards */
+section, .intro-box, .tip-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: var(--transition-smooth);
+}
+
+section {
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+section:hover {
+    box-shadow: 0 15px 40px var(--neon-glow);
+}
+
+h2 {
+    color: var(--primary-green);
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+/* Grid Layouts */
+.tips-grid, .subject-grid, .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+    margin-top: 1.8rem;
+}
+
+/* Card Styling */
+.tip-card, .resource-card, .subject-card {
+    padding: 2rem;
+    border-top: 4px solid var(--primary-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tip-card:hover, .resource-card:hover, .subject-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-green);
+    box-shadow: 0 15px 35px var(--neon-glow);
+}
+
+/* Icons */
+.tip-icon, .subject-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Typography Inside Cards */
+.tip-card h3, .resource-card h3, .subject-card h3 {
+    color: var(--primary-green);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.8rem;
+}
+
+.eng-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Urdu Text Styling */
+.urdu-box {
+    background: #eef8f2;
+    border-left: 3.5px solid var(--accent-green);
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    margin-top: auto;
+}
+
+.urdu-text {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #1a2e22;
+    margin: 0;
+    line-height: 1.9;
+}
+
+/* Modern Action Buttons */
+.btn-download, .btn-view, .modern-cta-btn {
+    background: linear-gradient(135deg, var(--primary-green), #004d26);
+    color: #ffffff;
+    text-align: center;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 6px 20px rgba(0, 102, 51, 0.2);
+    display: inline-block;
+}
+
+.btn-download:hover, .btn-view:hover, .modern-cta-btn:hover {
+    background: linear-gradient(135deg, var(--accent-green), var(--primary-green));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px var(--neon-glow);
+}
+
+/* Footer Styling */
+footer {
+    background: #0b1310;
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    margin-top: 5rem;
+    border-top: 4px solid var(--accent-green);
+}
+
+footer p {
+    margin: 0;
+    color: #9ca3af;
+    font-weight: 500;
+}

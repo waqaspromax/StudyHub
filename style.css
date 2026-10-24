@@ -1,0 +1,547 @@
+/* ===== STUDYHUB | PAKISTAN GREEN THEME ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --green: #046a38;
+    --dark-green: #014421;
+    --bright-green: #119b50;
+    --white: #ffffff;
+    --bg: #f4faf6;
+    --text: #26382d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 65px 20px;
+    color: white;
+    background: linear-gradient(135deg, #013b20, #046a38, #119b50);
+    background-size: 200% 200%;
+    animation: greenFlow 8s ease infinite;
+    border-bottom: 5px solid #ffffff;
+}
+
+header h1 {
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: 2px;
+    animation: fadeDown 0.8s ease both;
+}
+
+header p {
+    color: #e1f5e8;
+    margin-top: 10px;
+    animation: fadeUp 1s ease both;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: #d7e9dd;
+}
+
+main {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+section {
+    padding: 60px 0;
+    animation: fadeUp 0.8s ease both;
+}
+
+section h2 {
+    color: var(--dark-green);
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+section > p { color: #647568; }
+
+main > section:first-child {
+    text-align: center;
+    padding: 75px 15px 45px;
+}
+
+main > section:first-child h2 {
+    color: var(--green);
+}
+
+/* ===== LARGE CLASS BOXES ===== */
+
+#classes ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    margin-top: 35px;
+}
+
+#classes li {
+    min-height: 235px;
+    display: flex;
+    background: white;
+    border: 1px solid #dcebe0;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(1, 68, 33, 0.07);
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+    animation: fadeUp 0.7s ease both;
+}
+
+#classes li:nth-child(2) { animation-delay: .1s; }
+#classes li:nth-child(3) { animation-delay: .2s; }
+#classes li:nth-child(4) { animation-delay: .3s; }
+#classes li:nth-child(5) { animation-delay: .4s; }
+
+#classes li:hover {
+    transform: translateY(-8px);
+    border-color: var(--bright-green);
+    box-shadow: 0 18px 38px rgba(4, 106, 56, 0.16);
+}
+
+#classes li a {
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    border-left: 6px solid var(--green);
+    transition: background 0.3s ease;
+}
+
+#classes li:nth-child(even) a {
+    border-left-color: var(--bright-green);
+}
+
+#classes li:hover a {
+    background: #f5fcf7;
+}
+
+#classes li h3 {
+    color: var(--dark-green);
+    font-size: 1.45rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+#classes li p {
+    color: #647568;
+    font-size: .95rem;
+}
+
+#classes li a::after {
+    content: 'Explore Resources  →';
+    color: var(--green);
+    font-size: .9rem;
+    font-weight: 700;
+    margin-top: 17px;
+    transition: transform .3s ease;
+}
+
+#classes li:hover a::after {
+    transform: translateX(7px);
+}
+
+/* ===== EDUCATIONAL GUIDANCE ===== */
+
+#guidance article {
+    background: white;
+    padding: 25px 28px;
+    margin: 18px 0;
+    border-radius: 14px;
+    border-left: 5px solid var(--green);
+    box-shadow: 0 5px 20px rgba(1, 68, 33, .05);
+    transition: transform .3s, box-shadow .3s;
+}
+
+#guidance article:hover {
+    transform: translateX(7px);
+    box-shadow: 0 12px 28px rgba(4, 106, 56, .12);
+}
+
+#guidance h3 { color: var(--green); }
+
+/* ===== BENEFITS ===== */
+
+#benefits ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+}
+
+#benefits li {
+    background: white;
+    padding: 23px;
+    border: 1px solid #dfebe2;
+    border-radius: 14px;
+    transition: transform .3s, border-color .3s;
+}
+
+#benefits li:hover {
+    transform: translateY(-5px);
+    border-color: var(--bright-green);
+}
+
+#benefits strong { color: var(--green); }
+
+/* ===== FOOTER ===== */
+
+footer {
+    background: var(--dark-green);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 35px;
+    border-top: 5px solid #e8f5eb;
+    font-size: .9rem;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes greenFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 700px) {
+    header { padding: 45px 18px; }
+
+    section { padding: 42px 0; }
+
+    #classes ul,
+    #benefits ul {
+        grid-template-columns: 1fr;
+    }
+
+    #classes li { min-height: 210px; }
+
+    #classes li a { padding: 24px; }
+
+    #classes li h3 { font-size: 1.3rem; }
+
+    #guidance article { padding: 22px; }
+}
+
+/* ===== REDUCE MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+#guidance article a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+#guidance article {
+    cursor: pointer;
+}
+
+/* =====================================
+   STUDYHUB — LIGHT FUTURISTIC MODAL
+   Emerald • Glass • Premium UI
+===================================== */
+
+.modern-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(8, 40, 25, 0.48);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    animation: fadeIn 0.35s ease;
+}
+
+/* Main glass card */
+.modern-modal-card {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    padding: 40px 32px 30px;
+    overflow: hidden;
+    text-align: center;
+    color: #173c2b;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #d1f3df;
+    border-radius: 25px;
+    box-shadow: 0 25px 70px #003b201f;
+    animation: cardEnter 0.55s ease both;
+}
+
+/* Soft emerald decoration */
+.modern-modal-card .modal-glow {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    width: 260px;
+    height: 180px;
+    transform: translateX(-50%);
+    background: #00c87820;
+    filter: blur(55px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Subtle corner accents */
+.modern-modal-card::before,
+.modern-modal-card::after {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 4px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #008b50, #6de6a7);
+}
+
+.modern-modal-card::before {
+    top: 0;
+    left: 30px;
+}
+
+.modern-modal-card::after {
+    right: 30px;
+    bottom: 0;
+}
+
+/* Board badge */
+.modal-badge-wrapper {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.modern-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 15px;
+    color: #087443;
+    background: #e9fbf0;
+    border: 1px solid #c8efd8;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    background: #00a95c;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #00a95c20;
+    animation: pulse 1.8s infinite;
+}
+
+/* Heading */
+.modern-modal-card h2 {
+    position: relative;
+    margin: 0 0 14px;
+    color: #075b36;
+    font-size: clamp(29px, 5vw, 41px);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.modal-subtitle {
+    max-width: 420px;
+    margin: 0 auto 26px;
+    color: #607568;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Developer panel */
+.modern-developer-box {
+    position: relative;
+    margin: 24px 0;
+    padding: 22px 15px;
+    background: linear-gradient(135deg, #f0fff5, #ffffff);
+    border: 1px solid #d8f1e1;
+    border-radius: 17px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.modern-developer-box:hover {
+    transform: translateY(-3px);
+    border-color: #80dba8;
+    box-shadow: 0 12px 30px #08744312;
+}
+
+.dev-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #71877a;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.dev-name {
+    margin: 0;
+    color: #087443;
+    font-size: clamp(23px, 4vw, 30px);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.dev-underline {
+    width: 55px;
+    height: 3px;
+    margin: 13px auto 0;
+    background: linear-gradient(90deg, #00a95c, #91e9b6);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.modern-developer-box:hover .dev-underline {
+    width: 100px;
+}
+
+/* Premium button */
+.modern-cta-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 54px;
+    padding: 15px 20px;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(110deg, #087443, #0aa961);
+    border: 1px solid #087443;
+    border-radius: 13px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 7px 20px #08744325;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+}
+
+.modern-cta-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(110deg, #065d35, #078d50);
+    box-shadow: 0 12px 28px #08744335;
+}
+
+.modern-cta-btn:active {
+    transform: scale(0.98);
+}
+
+.modern-cta-btn:focus-visible {
+    outline: 3px solid #65d99b;
+    outline-offset: 4px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulse {
+    50% {
+        box-shadow: 0 0 0 7px #00a95c08;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    .modern-modal-overlay {
+        padding: 14px;
+    }
+
+    .modern-modal-card {
+        padding: 36px 21px 24px;
+        border-radius: 21px;
+    }
+
+    .modal-subtitle {
+        font-size: 13px;
+    }
+
+    .modern-badge {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .modern-cta-btn {
+        font-size: 12px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .modern-modal-overlay,
+    .modern-modal-card,
+    .modern-modal-card *,
+    .pulse-dot {
+        animation: none !important;
+        transition: none !important;
+    }
+}

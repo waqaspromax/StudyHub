@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+
+:root {
+    --green: #006633;
+    --green-accent: #00a859;
+    --neon-glow: rgba(0, 168, 89, 0.2);
+    --light-bg: #f4fbf7;
+    --white: #ffffff;
+    --text: #111827;
+    --gray: #4b5563;
+    --border-color: rgba(0, 102, 51, 0.12);
+    --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: radial-gradient(circle at top right, #e6f4ed, #f8fafc);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header & Navigation */
+header {
+    background: linear-gradient(135deg, var(--green), #004d26);
+    color: var(--white);
+    padding: 3rem 1rem 3.5rem;
+    text-align: center;
+    border-bottom: 5px solid var(--green-accent);
+    box-shadow: 0 10px 30px rgba(0, 102, 51, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-bar {
+    max-width: 1050px;
+    margin: 0 auto 1.8rem;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+.back-link {
+    color: #d1fae5;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    color: var(--white);
+    transform: translateX(-3px);
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    position: relative;
+    z-index: 2;
+}
+
+header p {
+    margin: 0;
+    color: #d1fae5;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+
+/* Main Container & Sections */
+main {
+    max-width: 1050px;
+    margin: 3rem auto;
+    padding: 0 1.2rem;
+}
+
+section, .intro-box, .tip-card, .resource-card, .subject-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+}
+
+section {
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+section:hover {
+    box-shadow: 0 15px 40px var(--neon-glow);
+}
+
+h2 {
+    color: var(--green);
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+p {
+    color: var(--gray);
+}
+
+/* Grids */
+.subject-grid, .resource-grid, .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.8rem;
+    margin-top: 1.8rem;
+}
+
+/* Subject & Resource Cards */
+.subject-card, .resource-card, .tip-card {
+    background: var(--light-bg);
+    border-top: 4px solid var(--green);
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.subject-card:hover, .resource-card:hover, .tip-card:hover {
+    transform: translateY(-5px);
+    background: var(--white);
+    border-color: var(--green-accent);
+    box-shadow: 0 15px 35px var(--neon-glow);
+}
+
+.subject-card .icon, .tip-icon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.subject-card h3, .resource-card h3, .tip-card h3 {
+    margin: 0 0 6px;
+    color: var(--green);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.subject-card p, .resource-card p, .eng-text {
+    margin: 0 0 1.2rem;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-bottom: 0.8rem;
+    width: fit-content;
+}
+
+.badge.pdf { background: #dbeafe; color: #1e40af; }
+.badge.past-paper { background: #d1fae5; color: #065f46; }
+.badge.guess { background: #fef3c7; color: #92400e; }
+.badge.notes { background: #fce7f3; color: #9d174d; }
+
+/* Action Buttons (Dual View/Download) */
+.card-actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: auto;
+}
+
+.btn-view {
+    flex: 1;
+    background: transparent;
+    color: var(--green);
+    border: 2px solid var(--green);
+    text-align: center;
+    padding: 0.6rem 0.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.btn-view:hover {
+    background: var(--light-bg);
+}
+
+.btn-download {
+    flex: 1;
+    background: var(--green);
+    color: var(--white);
+    border: 2px solid var(--green);
+    text-align: center;
+    padding: 0.6rem 0.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.btn-download:hover {
+    background: var(--green-accent);
+    border-color: var(--green-accent);
+    box-shadow: 0 4px 12px var(--neon-glow);
+}
+
+/* Urdu Box Styling for Guidance Pages */
+.urdu-box {
+    background: var(--white);
+    border-left: 3.5px solid var(--green-accent);
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    margin-top: auto;
+    border: 1px solid rgba(0, 102, 51, 0.08);
+}
+
+.urdu-text {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    direction: rtl;
+    text-align: right;
+    font-size: 0.88rem;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.9;
+}
+
+/* Guidance Link Wrapper */
+.guidance-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+
+.guidance-link:hover h3 {
+    color: var(--green-accent);
+}
+
+/* Footer */
+footer {
+    background: #0b1310;
+    color: var(--white);
+    text-align: center;
+    padding: 2.5rem 1rem;
+    margin-top: 4rem;
+    border-top: 4px solid var(--green-accent);
+}
+
+footer p {
+    margin: 0;
+    color: #9ca3af;
+    font-weight: 500;
+}

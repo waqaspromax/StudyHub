@@ -1,0 +1,412 @@
+
+/* ==========================================
+   STUDYHUB — CAREER COUNSELLING
+   Premium Emerald UI | Responsive Design
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu&display=swap');
+
+:root {
+    --green: #087443;
+    --dark: #064e32;
+    --accent: #14a765;
+    --light: #eaf8ef;
+    --text: #19372a;
+    --muted: #687d70;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 5% 15%, #d9f5e3 0, transparent 28%),
+        radial-gradient(circle at 95% 60%, #e3f6e9 0, transparent 28%),
+        #f7fcf8;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 25px 7% 75px;
+    color: white;
+    text-align: center;
+    background: linear-gradient(125deg, #043d27, #087443, #12a766);
+    background-size: 200% 200%;
+    animation: headerFlow 12s ease infinite;
+    border-bottom: 5px solid #c9f3d8;
+}
+
+header::before,
+header::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border: 1px solid #ffffff25;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+header::before {
+    width: 320px;
+    height: 320px;
+    top: -200px;
+    right: -70px;
+    box-shadow: 0 0 0 35px #ffffff08,
+                0 0 0 70px #ffffff05;
+}
+
+header::after {
+    width: 220px;
+    height: 220px;
+    bottom: -170px;
+    left: -65px;
+    box-shadow: 0 0 0 30px #ffffff08;
+}
+
+.nav-bar {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 17px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    background: #ffffff15;
+    border: 1px solid #ffffff55;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--dark);
+    background: white;
+    transform: translateX(-4px);
+}
+
+header h1 {
+    max-width: 1000px;
+    margin: 42px auto 17px;
+    font-size: clamp(30px, 5vw, 49px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -1.2px;
+    animation: riseIn 0.7s ease both;
+}
+
+header > p {
+    max-width: 760px;
+    margin: auto;
+    color: #e0f8e9;
+    font-size: 14px;
+    line-height: 1.9;
+    animation: riseIn 0.9s ease both;
+}
+
+/* MAIN CONTENT */
+
+main {
+    width: min(1180px, 91%);
+    margin: auto;
+    padding: 65px 0 75px;
+}
+
+/* INTRODUCTION */
+
+.intro-box {
+    position: relative;
+    margin-bottom: 48px;
+    padding: 35px 38px;
+    overflow: hidden;
+    background: linear-gradient(125deg, #ffffff, #f0fbf4);
+    border: 1px solid #d5efdf;
+    border-left: 5px solid var(--accent);
+    border-radius: 20px;
+    box-shadow: 0 12px 35px #064e3209;
+    animation: riseIn 0.7s ease both;
+}
+
+.intro-box::after {
+    content: "GUIDANCE";
+    position: absolute;
+    right: 20px;
+    bottom: 8px;
+    color: #08744308;
+    font-size: clamp(32px, 6vw, 65px);
+    font-weight: 800;
+    letter-spacing: 3px;
+    pointer-events: none;
+}
+
+.intro-box h2 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 15px;
+    color: var(--dark);
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.intro-box p {
+    position: relative;
+    z-index: 1;
+    max-width: 950px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* CAREER CARDS GRID */
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* INDIVIDUAL CARDS */
+
+.tip-card {
+    position: relative;
+    padding: 30px 25px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid #dfefe4;
+    border-radius: 22px;
+    box-shadow: 0 8px 28px #064e3208;
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+    animation: riseIn 0.7s ease both;
+}
+
+.tip-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #087443, #65dfa0, #c5f4d6);
+    transform: scaleX(0.15);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+}
+
+.tip-card:hover::before {
+    transform: scaleX(1);
+}
+
+.tip-card:hover {
+    transform: translateY(-7px);
+    border-color: #a9dfbd;
+    box-shadow: 0 20px 45px #08744313;
+}
+
+/* CAREER ICON */
+
+.tip-icon {
+    display: grid;
+    place-items: center;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 22px;
+    font-size: 30px;
+    background: linear-gradient(135deg, #e7f9ed, #f7fff9);
+    border: 1px solid #d5efdf;
+    border-radius: 19px;
+    box-shadow: 0 6px 18px #0874430a;
+    transition: transform 0.35s ease;
+}
+
+.tip-card:hover .tip-icon {
+    transform: translateY(-3px) rotate(-5deg) scale(1.06);
+}
+
+/* CARD HEADING */
+
+.tip-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+/* ENGLISH DESCRIPTION */
+
+.eng-text {
+    margin-bottom: 22px;
+    color: #64776b;
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+/* URDU GUIDANCE BOX */
+
+.urdu-box {
+    padding: 17px 16px;
+    background: linear-gradient(135deg, #effaf2, #f9fefa);
+    border: 1px solid #d9eee0;
+    border-radius: 14px;
+    transition: background 0.3s ease;
+}
+
+.tip-card:hover .urdu-box {
+    background: #e8f8ee;
+}
+
+.urdu-text {
+    color: #245a3d;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 14px;
+    line-height: 2.4;
+    text-align: right;
+    direction: rtl;
+}
+
+.urdu-text strong {
+    color: #087443;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 28px 18px;
+    color: #e1f7e9;
+    text-align: center;
+    background: linear-gradient(110deg, #043d27, #087443);
+    border-top: 4px solid #18a866;
+}
+
+footer p {
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* ANIMATIONS */
+
+@keyframes riseIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes headerFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* TABLETS */
+
+@media (max-width: 950px) {
+    .tips-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    main {
+        padding-top: 45px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 580px) {
+    header {
+        padding: 20px 5% 45px;
+    }
+
+    header h1 {
+        margin-top: 32px;
+        font-size: 29px;
+        letter-spacing: -0.5px;
+    }
+
+    header > p {
+        font-size: 13px;
+    }
+
+    main {
+        width: 92%;
+        padding: 35px 0 45px;
+    }
+
+    .intro-box {
+        padding: 25px 21px;
+        margin-bottom: 32px;
+    }
+
+    .intro-box p {
+        font-size: 13px;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .tip-card {
+        padding: 25px 22px;
+        border-radius: 18px;
+    }
+
+    .tip-card h3 {
+        font-size: 16px;
+    }
+
+    .eng-text {
+        font-size: 13px;
+    }
+
+    .urdu-text {
+        font-size: 13px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+.back-link:focus-visible {
+    outline: 3px solid #8ceab1;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
