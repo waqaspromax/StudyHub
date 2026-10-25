@@ -163,10 +163,19 @@ footer {
 
 footer p {
 
-    .video-container {
+    /* Match the styling of your other white cards */
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Adjust to match your existing card styling */
+    overflow: hidden;
+}
+
+/* Responsive video wrapper */
+.video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* Creates a 16:9 aspect ratio */
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     height: 0;
     overflow: hidden;
 }
@@ -178,7 +187,4 @@ footer p {
     width: 100%;
     height: 100%;
     border: 0;
-}
-    margin: 0;
-    color: #d1fae5;
 }
